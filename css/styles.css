@@ -1,0 +1,165 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background: linear-gradient(to left top, pink, blue); /* Sfumatura di colore */
+}
+
+/* _________________________________________ Header _________________________________________ */
+
+header{
+  height: 12.3vh;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  font-size: 30px;
+  background-color:rgba(255, 255, 255, 0.4); /* Background sbiadito */
+}
+
+header span{
+  opacity: 0.4;
+  margin-left: 30px;
+  cursor: pointer;
+}
+
+header .settings #settings-icon{
+  opacity: 0.7;
+  margin-right: 30px;
+  cursor: pointer;
+}
+
+header span:hover,
+header .settings #settings-icon:hover{
+  opacity: 1;
+}
+
+/* _________________________________________ Settings _________________________________________ */
+
+.settings{
+  position: relative;
+}
+
+.advanced-settings{
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 250px;
+  height: 300px;
+  background-color:rgba(255, 255, 255, 0.4); /* Background sbiadito */
+  position: absolute;
+  right: 10px;
+  top: 70px;
+  border-radius: 10px;
+  backdrop-filter: blur(0.8rem); /* Sfocamento elementi sottostanti */
+  /*
+  backdrop filter in Firefox don't work
+  Navigate to "about:config" and set "layout.css.backdrop-filter.enabled" to true
+  */
+}
+
+.advanced-settings h2{
+  font-size: 30px;
+  text-align: center;
+}
+
+.advanced-settings p{
+  font-size: 20px;
+}
+
+.advanced-settings #counter-value{
+  width: 60px;
+  height: 50px;
+  font-size: 30px;
+  text-align: center;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+.advanced-settings button{
+  background-color: white;
+  border-color: white;
+  outline: none;
+  border-radius: 8px;
+  width: 100px;
+  height: 50px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* _________________________________________ Counter _________________________________________ */
+
+.counter{
+  height: 87.7vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.counter button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 120px;
+  width: 300px;
+  height: 300px;
+  border-radius: 60px;
+  border-color: white;
+  cursor: pointer;
+  outline: none;
+}
+
+.counter button:hover{
+  box-shadow: 5px 5px 16px #424242;
+}
+
+.counter #counter{
+  text-align: center;
+  font-size: 250px;
+  color: white;
+  width: 400px;
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+  /*
+  .counter button{
+    width: 250px;
+    height: 250px;
+  }
+
+  .counter #counter{
+    font-size: 200px;
+    width: 300px;
+  }
+  */
+
+  .counter #add{
+    margin-right: 5%;
+  }
+
+  .counter #remove{
+    margin-left: 5%;
+  }
+
+}
+
+@media only screen and (max-width: 600px) {
+  .counter{
+    flex-direction: column;
+  }
+
+  .counter #add{
+    order: -1;
+  }
+
+  .counter #remove{
+    order: 2;
+  }
+
+}
